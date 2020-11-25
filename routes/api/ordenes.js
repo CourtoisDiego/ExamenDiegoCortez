@@ -42,10 +42,9 @@ router.get('/all', async (req, res)=>{
     try{
       let {id} = req.params;
       //id = Number(id);
-      let {stock, sales} = req.body;
-      sales = Number(sales);
-      stock = Number(stock);
-      let rslt = await mdbOrdenesModel.updateById(id, stock, sales);
+      let {estado} = req.body;
+      
+      let rslt = await mdbOrdenesModel.updateById(id, estado);
       res.status(200).json(rslt);
     }catch(ex){
       console.log(ex);

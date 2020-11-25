@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "b67ace1f-f9b1-4f03-9094-bb5adc602bea",
+		"name": "ExamenDiegoCortez",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/api/ordenes/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/ordenes/all",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"ordenes",
+						"all"
+					]
+				},
+				"description": "All"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/ordenes/one/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/ordenes/one/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"ordenes",
+						"one",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Obtener una orden"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/ordenes/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "tel",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "producto",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "formap",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "estado",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/ordenes/new",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"ordenes",
+						"new"
+					]
+				},
+				"description": "Crea una nueva orden"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/api/ordenes/upd/:id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "estado",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/ordenes/upd/:id",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"ordenes",
+						"upd",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Actualiza estado de orden"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
