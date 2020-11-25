@@ -30,7 +30,7 @@ router.get('/all', async (req, res)=>{
     try{
       let { nombre,email,tel,producto,formap,estado} = req.body;
       
-      var rslt = await mdbProductModel.addOne({ nombre,email,tel,producto,formap,estado}); // {sku: sku, name:name, price:price, stock:0}
+      var rslt = await mdbOrdenesModel.addOne({ nombre,email,tel,producto,formap,estado}); 
       res.status(200).json(rslt);
     }catch(ex){
       console.log(ex);
@@ -38,6 +38,19 @@ router.get('/all', async (req, res)=>{
     }
  
   });
-  
+  router.put('/upd/:id', async (req, res)=>{
+    try{
+      let {id} = req.params;
+      //id = Number(id);
+      let {stock, sales} = req.body;
+      sales = Number(sales);
+      stock = Number(stock);
+      let rslt = await mdbOrdenesModel.updateById(id, stock, sales);
+      res.status(200).json(rslt);
+    }catch(ex){
+      console.log(ex);
+      res.status(500).json({ "msg": "Algo Paso Mal." });
+    }
+  });
 
 module.exports = router;

@@ -42,5 +42,17 @@ class OrdenesModel{
         }
       }
     
+      async updateById(id, estado){
+        try{
+          const _id = new ObjectID(id);
+          // UPDATE TABLE SET attr = val, attr = val where attr = val;
+          const updOps = {"$set":{"estado":estado}};
+          let updDoc = await this.collection.findOneAndUpdate({ _id }, updOps, { returnOriginal:false});
+          return updDoc;
+        }catch(ex){
+          throw(ex);
+        }
+      }
+    
 }
 module.exports = OrdenesModel;
